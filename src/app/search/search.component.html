@@ -1,0 +1,19 @@
+<div id="content-container">
+  <div class="col-md-12">
+    <div class="panel panel-header">
+      <div class="h2 searchInfo">You Searched For: {{searchParam}}</div>
+      <div class="h2 searchInfo" *ngIf="numOfResults != 1">{{numOfResults}} Results Found</div>
+      <div class="h2 searchInfo" *ngIf="numOfResults == 1">{{numOfResults}} Result Found</div>
+      <div style="padding: 10px">
+        <search-simple-form (routeChange)="runSearch()"></search-simple-form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <data-catalog-link
+      *ngFor="let result of results | paginate: { itemsPerPage: 5, currentPage: page }" 
+      [dataset]="result">
+    </data-catalog-link>  
+    <pagination-controls class="search-results-pagination" (pageChange)="page = $event"></pagination-controls>
+  </div>  
+</div>

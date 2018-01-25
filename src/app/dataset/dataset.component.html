@@ -1,0 +1,50 @@
+<section id="data-description">
+  <div id="content-container">
+    <div class="data-description-content" *ngIf="dataset">
+      <h2 class="h2">{{dataset.title}} Description</h2>
+      <p>
+        {{dataset.description}}
+      </p>
+    </div>
+  </div>
+</section>
+<div id="content-container" *ngIf="dataset">
+  <section id="content-container">
+    <div class="h2">
+      Dataset Preview
+    </div>
+    <div class="row">
+      <div class="panel panel-table">
+        <div class="panel-body">
+          <chart-google [dataset]="dataset" chartType="TableChart"></chart-google>
+        </div>
+      </div>
+    </div>
+    <h2 class="h2">Available Dataset Charts</h2>
+    <div class="row">
+      <div *ngFor="let chartType of chartTypes" [ngSwitch]="chartType.ChartName">
+        <div class="panel col-md-5" *ngSwitchCase="'MapChart'">
+            <div class="panel-body">
+              <chart-map [dataset]="dataset"></chart-map>
+              <a routerLink="{{baseRouteUrl}}/{{dataset.ID}}/{{chartType.ChartName}}">
+                <button class="btn btn-default">View</button>
+              </a>
+            </div>
+        </div>
+        <div class="panel col-md-5" *ngSwitchDefault>
+            <div class="panel-body">
+              <chart-google [dataset]="dataset" [chartType]="chartType.ChartName"></chart-google>
+              <a routerLink="{{baseRouteUrl}}/{{dataset.ID}}/{{chartType.ChartName}}">
+                <button class="btn btn-default">View</button>
+              </a>
+            </div>
+          </div>
+      </div>
+      <div class="panel col-md-9" *ngIf="chartTypes?.length == 0">
+        <div class="panel-body">
+            No dataset charts available.
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

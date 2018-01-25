@@ -1,0 +1,34 @@
+<div id="content-container">
+  <div class="row">
+    <div class="panel panel-default col-md-2 options-min-width">
+      <div class="panel-header">
+        <h3 class="h3">Search Options</h3>
+      </div>
+      <div class="panel-body">
+        <div class="btn-group col-md-offset-1" dropdown>
+          <button dropdownToggle type="button" class="btn btn-default dropdown-toggle">
+            <div class="dropdown-option-type">View Types <span class="caret"></span></div>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem"><a class="dropdown-item" (click)="filterBy('BarChart')">Bar Chart</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="filterBy('LineChart')">Line Chart</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="filterBy('HistogramChart')">Histogram Chart</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="filterBy('TableChart')">Table Chart</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="filterBy('DonutChart')">Donut Chart</a></li>
+            <li role="menuitem"><a class="dropdown-item" (click)="filterBy('PieChart')">Pie Chart</a></li>
+          </ul>
+        </div>
+        <div *ngIf="isFiltered" class="btn-group col-md-offset-1">
+          <button class="btn btn-default dropdown-toggle" (click)="getAllDatasets()">Reset Filters</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <data-catalog-link
+        *ngFor="let dataset of datasets | paginate: { itemsPerPage: 3, currentPage: page }" 
+        [dataset]="dataset">
+      </data-catalog-link>  
+      <pagination-controls class="data-catalog-pagination" (pageChange)="page = $event"></pagination-controls>      
+    </div>
+  </div>
+</div>

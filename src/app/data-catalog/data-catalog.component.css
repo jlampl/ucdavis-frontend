@@ -1,0 +1,33 @@
+.dropdown-option-type {
+  padding: 0 20px 0 20px;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.btn-group {
+  margin: 10px 0 10px 0;
+}
+
+.data-catalog-pagination /deep/ .ngx-pagination  {
+  text-align: center;
+  color: white;
+  font-size: 14pt;
+}
+
+.data-catalog-pagination /deep/ .ngx-pagination .current {
+  background-color: #FFCD00;
+}
+
+.data-catalog-pagination /deep/ .ngx-pagination a {
+  color: white;
+}
+
+.data-catalog-pagination /deep/ .ngx-pagination a:hover {
+  background-color: #002855;
+}
+
+.data-catalog-pagination /deep/ .ngx-pagination .disabled {
+  color: gray;
+}

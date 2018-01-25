@@ -1,0 +1,109 @@
+/* 
+   Global styles 
+   Imported via .angular-cli.json
+*/
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+/* Default tag style */
+html, body {
+  background-color: #335379;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #FFCD00;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  color: white;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #FFCD00;
+}
+
+footer {
+  /* If height changes, must also change margin-top in footer and 
+     padding-bottom in #main-container to corresponding value. */
+  height: 50px;
+  margin-top: -50px;
+  background-color: #002855;
+  color: #FFCD00;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* IDs */
+#main-container {
+    min-height: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+#content-container {
+  margin-top: 75px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+#navigation {
+  background-color: #002855;
+  border-bottom-color: #FFCD00;
+}
+
+#navigation .logo {
+  height: 25px;
+  width: 150px;
+}
+
+#navigation a {
+  color: #FFCD00;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+#navigation li a:hover {
+  color: black;
+  background-color: #99A9BF;
+}
+
+#navigation li {
+  margin-top: 2px;
+}
+
+/* Classes */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.dropdown-toggle {
+  background-color: #002855;
+  border-color: #FFCD00;
+  color: #FFCD00;
+  padding: 10px;
+  font-size: 14pt; 
+}
+
+.options-min-width {
+  min-width: 225px;
+}
+
+.panel {
+  background-color: #002855;
+  border-color: #FFCD00;
+  box-shadow: 10px 8px 8px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+}
+
+.infoWindow { /* Apparently Google Maps info window styling needs to be in a parent style to work properly */
+  color: black;
+}

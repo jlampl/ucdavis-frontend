@@ -1,0 +1,26 @@
+.searchInfo {
+    color: white;
+    text-align: center;
+}
+
+.search-results-pagination /deep/ .ngx-pagination  {
+    text-align: center;
+    color: white;
+    font-size: 14pt;
+  }
+  
+  .search-results-pagination /deep/ .ngx-pagination .current {
+    background-color: #FFCD00;
+  }
+  
+  .search-results-pagination /deep/ .ngx-pagination a {
+    color: white;
+  }
+  
+  .search-results-pagination /deep/ .ngx-pagination a:hover {
+    background-color: #002855;
+  }
+  
+  .search-results-pagination /deep/ .ngx-pagination .disabled {
+    color: gray;
+  }
