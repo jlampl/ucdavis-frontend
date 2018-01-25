@@ -92,16 +92,12 @@ export class GoogleChart implements OnChanges {
                 for (let i = 0; i < self.states.length; i++) {
                     if (self.states[i]) {
                         controlWrappers[i].setState(self.states[i]);
-                        // console.log("restoring state: " + self.states[i].lowValue + " - " + self.states[i].highValue);
                     }
                 }
 
                 //grab controlWrapper states when the chart is ready
                 for (let i = 0; i < controlWrappers.length; i++) {
                     google.visualization.events.addListener(controlWrappers[i], 'ready', () => {
-                        // console.log("-----")
-                        // console.log("lowVal: " + controlWrappers[i].getState().lowValue);
-                        // console.log("hiVal : " + controlWrappers[i].getState().highValue);
                         self.states[i] = controlWrappers[i].getState();
                     });            
                 }
